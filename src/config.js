@@ -14,4 +14,9 @@ if (!config.nerimityToken) {
   process.exit(1);
 }
 
+if (!config.lastfmApiKey) {
+  console.error("missing LASTFM_API_KEY!!");
+  process.exit(1);
+}
+
 module.exports = config;

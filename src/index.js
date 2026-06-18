@@ -2,15 +2,19 @@
 // boots client, authenticates, routes slash commands to handlers
 
 const { Client, Events } = require("@nerimity/nerimity.js");
-const config = require("./config.js");
+const config = require("./config");
 
-const ping = require("./commands/ping.js");
+const ping = require("./commands/ping");
+const setfm = require("./commands/setfm");
+const fm = require("./commands/fm");
 
 const client = new Client();
 
 // ==== command router ====
 const commands = {
   ping,
+  setfm,
+  fm,
 };
 
 // ==== lifecycle ====

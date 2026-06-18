@@ -8,10 +8,12 @@
 // > or: npm run register
 
 const { Client } = require("@nerimity/nerimity.js");
-const config = require("./config.js");
+const config = require("./config");
 
 const commands = [
   { name: "ping", description: "How fast do I reply?", args: "" },
+  { name: "setfm", description: "Set your Last.fm username.", args: "<username>" },
+  { name: "fm", description: "Shows what you're currently playing.", args: "<username>" },
 ];
 
 const client = new Client();
