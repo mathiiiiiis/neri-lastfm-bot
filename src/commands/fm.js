@@ -7,6 +7,7 @@
 
 const db = require("../lib/db");
 const lastfm = require("../lib/lastfm");
+const markup = require("../lib/markup");
 
 async function fm(message) {
   const arg = message.command.args[0];
@@ -53,7 +54,7 @@ async function fm(message) {
     `**${name}** by ${artist}`,
   ];
   if (album) lines.push(`on //${album}//`);
-  if (url) lines.push(`[View on Last.fm](${url})`);
+  if (url) lines.push(markup.link("View on Last.fm", url));
 
   await message.reply(lines.join("\n"));
 }
