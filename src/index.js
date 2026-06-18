@@ -1,0 +1,39 @@
+// ==== entry ====
+// boots client, authenticates, routes slash commands to handlers
+
+const { Client, Events } = require("@nerimity/nerimity.js");
+const config = require("./config.js");
+
+const ping = require("./commands/ping.js");
+
+const client = new Client();
+
+// ==== command router ====
+const commands = {
+  ping,
+};
+
+// ==== lifecycle ====
+
+client.on(Events.Ready, () => {
+  console.log(`connected as ${client.user?.username}`);
+});
+
+client.on(Events.MessageCreate, async (message) => {
+  if (message.user.id === client.user?.id) return;
+
+  const name = message.command?.name;
+  if (!name) return;
+
+  const handler = commands[name];
+  if (!handler) return;
+
+  try {
+    await handler(message, client);
+  } catch (err) {
+    console.error(`command ${name} failed`, err);
+    await message.reply("Something went wrong X[").catch(() => { });
+  }
+});
+
+client.login(config.nerimityToken);

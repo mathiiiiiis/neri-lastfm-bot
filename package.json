@@ -1,0 +1,14 @@
+{
+  "name": "neri-lastfm-bot",
+  "version": "0.0.0",
+  "description": "Last.fm bot for Nerimity",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "register": "node --env-file-if-exists=.env src/register.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@nerimity/nerimity.js": "^1.20.1"
+  }
+}
