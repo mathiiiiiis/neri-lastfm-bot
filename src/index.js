@@ -7,6 +7,7 @@ const config = require("./config");
 const ping = require("./commands/ping");
 const setfm = require("./commands/setfm");
 const fm = require("./commands/fm");
+const topartists = require("./commands/topartists");
 
 const client = new Client();
 
@@ -15,6 +16,7 @@ const commands = {
   ping,
   setfm,
   fm,
+  topartists,
 };
 
 // ==== lifecycle ====

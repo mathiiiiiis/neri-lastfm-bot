@@ -14,6 +14,7 @@ const commands = [
   { name: "ping", description: "How fast do I reply?", args: "" },
   { name: "setfm", description: "Set your Last.fm username.", args: "<username>" },
   { name: "fm", description: "Shows what you're currently playing.", args: "<username>" },
+  { name: "topartists", description: "List of your most played artists.", args: "<timeframe> <username> <count>" },
 ];
 
 const client = new Client();

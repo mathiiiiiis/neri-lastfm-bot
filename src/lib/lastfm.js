@@ -57,4 +57,14 @@ async function getUserInfo(username) {
   return body.user;
 }
 
-module.exports = { getRecentSongs, getUserInfo };
+//returns topartists payload for a user and period
+async function getTopArtists(username, period, limit = 10) {
+  const body = await request("user.getTopArtists", {
+    user: username,
+    period,
+    limit,
+  });
+  return body.topartists;
+}
+
+module.exports = { getRecentSongs, getUserInfo, getTopArtists };
