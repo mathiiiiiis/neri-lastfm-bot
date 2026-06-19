@@ -87,10 +87,17 @@ async function getTopSongs(username, period, limit = 10) {
   return body.toptracks;
 }
 
+//return album payload for an artist and album title
+async function getAlbumInfo(artist, album) {
+  const body = await request("album.getInfo", { artist, album });
+  return body.album;
+}
+
 module.exports = {
   getRecentSongs,
   getUserInfo,
   getTopArtists,
   getTopAlbums,
-  getTopSongs
+  getTopSongs,
+  getAlbumInfo,
 };

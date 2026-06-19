@@ -10,6 +10,7 @@ const fm = require("./commands/fm");
 const topartists = require("./commands/topartists");
 const topalbums = require("./commands/topalbums");
 const topsongs = require("./commands/topsongs");
+const cover = require("./commands/cover");
 
 const client = new Client();
 
@@ -21,6 +22,7 @@ const commands = {
   topartists,
   topalbums,
   topsongs,
+  cover,
 };
 
 // ==== lifecycle ====

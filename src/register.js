@@ -17,6 +17,7 @@ const commands = [
   { name: "topartists", description: "List of your most played artists.", args: "<timeframe> <username> <count>" },
   { name: "topalbums", description: "List of your most played albums.", args: "<timeframe> <username> <count>" },
   { name: "topsongs", description: "List of your most played songs.", args: "<timeframe> <username> <count>" },
+  { name: "cover", description: "Retunrs cover art for last played album or custom query.", args: "<album>" },
 ];
 
 const client = new Client();
