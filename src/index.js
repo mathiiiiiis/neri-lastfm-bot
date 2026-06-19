@@ -8,6 +8,8 @@ const ping = require("./commands/ping");
 const setfm = require("./commands/setfm");
 const fm = require("./commands/fm");
 const topartists = require("./commands/topartists");
+const topalbums = require("./commands/topalbums");
+const topsongs = require("./commands/topsongs");
 
 const client = new Client();
 
@@ -17,6 +19,8 @@ const commands = {
   setfm,
   fm,
   topartists,
+  topalbums,
+  topsongs,
 };
 
 // ==== lifecycle ====

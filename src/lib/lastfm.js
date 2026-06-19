@@ -67,4 +67,30 @@ async function getTopArtists(username, period, limit = 10) {
   return body.topartists;
 }
 
-module.exports = { getRecentSongs, getUserInfo, getTopArtists };
+//returns topalbum payload for a user and period
+async function getTopAlbums(username, period, limit = 10) {
+  const body = await request("user.getTopAlbums", {
+    user: username,
+    period,
+    limit,
+  });
+  return body.topalbums;
+}
+
+//returns toptracks payload for a user and period
+async function getTopSongs(username, period, limit = 10) {
+  const body = await request("user.getTopTracks", {
+    user: username,
+    period,
+    limit,
+  });
+  return body.toptracks;
+}
+
+module.exports = {
+  getRecentSongs,
+  getUserInfo,
+  getTopArtists,
+  getTopAlbums,
+  getTopSongs
+};
